@@ -1,4 +1,4 @@
-package com.kotlinspring.coursecatalogservice
+package com.kotlinspring
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
