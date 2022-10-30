@@ -1,9 +1,12 @@
 package com.kotlinspring.service
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 @Service
 class GreetingsService {
 
-    fun retrieveGreting(name : String) = "Hello $name"
+    @Value("\${message}")
+    lateinit var message : String
+    fun retrieveGreting(name : String) = "Hello $name, $message"
 }
