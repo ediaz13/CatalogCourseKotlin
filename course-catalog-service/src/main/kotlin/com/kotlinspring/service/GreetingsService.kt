@@ -8,5 +8,5 @@ class GreetingsService {
 
     @Value("\${message}")
     lateinit var message : String
-    fun retrieveGreting(name : String) = "Hello $name, $message"
+    fun retrieveGreeting(name : String) = "Hello $name, $message"
 }

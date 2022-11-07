@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 plugins {
 	id("org.springframework.boot") version "2.6.13"
@@ -31,6 +32,7 @@ dependencies {
 	//runtimeOnly("org.postgresql:postgresql")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-webflux")
 }
 
 tasks.withType<KotlinCompile> {
@@ -42,4 +44,19 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	test {
+		//After 7.1
+		java {
+			setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+		}
+
+		// Before 7.1
+		/*withConvention(KotlinSourceSet::class) {
+			kotlin.setSrcDirs(listOf("src/test/intg", "src/test/unit"))
+
+		}*/
+	}
 }

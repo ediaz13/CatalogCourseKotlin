@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/v1/greetings")
-class GreetingController (val greetinsService : GreetingsService){
+class GreetingController(val greetingsService: GreetingsService) {
 
     companion object : KLogging()
 
     @GetMapping("/{name}")
-    fun retrieveGreeting(@PathVariable("name") name: String) : String {
+    fun retrieveGreeting(@PathVariable("name") name: String): String {
         //return "Hello $name"
         logger.info("Name is $name")
-        return greetinsService.retrieveGreting(name)
+        return greetingsService.retrieveGreeting(name)
     }
 }

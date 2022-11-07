@@ -1,8 +1,8 @@
-#spring:
-#  application:
-#    name: course-catalog.-service
-#message: Hello from default profile
-#
+spring:
+  application:
+    name: course-catalog-service
+message: Hello from default profile
+
 #---
 #spring:
 #  config:
